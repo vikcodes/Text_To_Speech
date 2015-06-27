@@ -38,19 +38,21 @@
 
     <div id="pdf-button">
     	<center>
-      	<button type="button">Browse for PDF</button>
+      	<button type="button">Push to account</button>
       </center>
   	</div>
-
+    <form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
+      <fieldset>
+        <input type="file" name="fileselect" id="fileselect"></input>
+        <input id="Uploadbutton" type="button" value="Upload to Parse"/>
+      </fieldset>
+    </form>
 
     <script src="js/masonry.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/script.js"></script>
 
-    <form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
-  <fieldset>
-    <input type="file" name="fileselect" id="fileselect"></input>
-    <input id="uploadbutton" type="button" value="Upload to Parse"/>
-  </fieldset>
-</form>
+
+    
   </body>
 </html>
