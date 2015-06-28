@@ -17,13 +17,20 @@
 
    	<div id="username-container">
    		<center>
+        <left> 
+        <text> Username </text>
+      </left>
         <!-- textarea for the user to add username -->
         <textarea id="user" name="user" placeholder="Enter your username"></textarea>
     </center>
       </div> <!-- end .username-container -->
 
+
       <div id="title-container">
       	<center>
+          <left> 
+        <text> Title </text>
+      </left>
         <!-- textarea for the user to add username -->
         <textarea id="title" name="title" placeholder="Enter the title of your text"></textarea>
     </center>
@@ -31,6 +38,9 @@
 
       <div id="text-container">
       	<center>
+          <left> 
+        <text> Text </text>
+      </left>
         <!-- textarea for the user to add username -->
         <textarea id="text" name="text" placeholder="Enter your text"></textarea>
     </center>
@@ -42,10 +52,12 @@
       </center>
   	</div>
     <form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
-      <fieldset>
+<!--       <fieldset> -->
+<center>
         <input type="file" name="fileselect" id="fileselect"></input>
         <input id="Uploadbutton" type="button" value="Upload to Parse"/>
-      </fieldset>
+ <!--      </fieldset> -->
+</center>
     </form>
 
     <script src="js/masonry.min.js"></script>

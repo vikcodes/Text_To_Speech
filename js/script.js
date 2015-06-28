@@ -1,14 +1,29 @@
 (function(window, document, undefined) {
 
-  var $usernameContainer = $("#user");
-  var $title = $("#title");
-  var $text = $("#text");
+  var Parse = require('request');
+
+  Parse.initialize('PsO5rkxMEaRvzzig7IKiQgfpQVRNdQFpPYO9Ipg0', '0vSsy7rKFfJtuPIwmO8gsR9L2TjdLN3LTjVZPWCc');
+
+  var username = $("#user").val();
+  var fileTitle = $("#title").val();
+  var fileText = $("#text").val();
 
     // Set an event listener on the Choose File field.
     $('#fileselect').bind("change", function(e) {
       var files = e.target.files || e.dataTransfer.files;
       // Our file var now holds the selected file
       file = files[0];
+    });
+
+    $('#pdf-button').click(function() {
+      if(fileText !== "" && username !== "" && fileText !== "") {
+      var itduzzit = "https://www.itduzzit.com/zherbst/api/generate.json?token=6amr9lph4b5za8j&text_file=" + username + "_" + fileTitle +".txt&contents=" + fileText;
+      var xmlhttp = new XMLHttpRequest();
+          var response = xmlhttp.open("POST", itduzzit)
+          xmlhttp.send(JSON.stringify(response));
+        } else {
+          alert("Please fill in all fields");
+        }
     });
 
     // This function is called when the user clicks on Upload to Parse. It will create the REST API request to upload this image to Parse.
