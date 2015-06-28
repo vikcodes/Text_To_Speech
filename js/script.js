@@ -24,6 +24,9 @@ email = "tylerweitzman@gmail.com";
   var title = $("#title").val();
   var text = $("#text").val();
   var email = $("#email").val();
+
+
+  
     if(text !== "" && usernameContainer !== "" && title !== "" && email !== "") {
         
         var Note = Parse.Object.extend("Note");
@@ -82,19 +85,9 @@ email = "tylerweitzman@gmail.com";
         var url = data.url
         var json_data = jQuery.getJSON(url, data)
         var Note = Parse.Object.extend("Note");
-        
-
-
-        
-
-
-
         var User = Parse.Object.extend("User");
         var query = new Parse.Query(User);
         query.equalTo("email", email);
-        console.log(email);
-        
-        
 
         query.find({
           success: function(foundUser) {
@@ -106,12 +99,10 @@ email = "tylerweitzman@gmail.com";
             note.set("title", title);
             note.set("url", url);
             note.set("user", foundUser);
-
             var testUrl = "https://api.idolondemand.com/1/api/sync/ocrdocument/v1?url=" + url + "&apikey=cbf70b7c-5556-4234-b5ac-54f18d61fb25";
-              
 
-          var xmlhttp = new XMLHttpRequest();
-          xmlhttp.open("GET",  testUrl);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET",  testUrl);
             var ocr = null;
             $.getJSON(testUrl, function(data) {
                 ocr = JSON.stringify(data);
